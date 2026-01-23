@@ -1,0 +1,203 @@
+:root {
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  color: #f5f5f5;
+  background: #0e0f13;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  padding: 24px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+header {
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.hint {
+  margin: 0;
+  color: #b7c0d8;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+canvas {
+  border: 2px solid #2b2f3a;
+  background: #11151f;
+  border-radius: 8px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 180px;
+}
+
+.stat {
+  background: #171c28;
+  border: 1px solid #2b2f3a;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat span {
+  color: #9aa3b7;
+  font-size: 12px;
+}
+
+.stat strong {
+  font-size: 22px;
+}
+
+.stat-scores ol {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.stat-scores li {
+  color: #d0d6e5;
+}
+
+.game-over {
+  background: #2b0f10;
+  border: 1px solid #5e1d1f;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.game-over p {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.game-over .final-score {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.game-over button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f97316;
+  color: #1b0a02;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 12px;
+}
+
+.overlay-card {
+  background: #171c28;
+  border: 1px solid #2b2f3a;
+  border-radius: 16px;
+  padding: 24px;
+  width: min(360px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.overlay-card h2 {
+  margin: 0;
+}
+
+.overlay-card p {
+  margin: 0;
+  color: #b7c0d8;
+}
+
+.overlay-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.overlay-card input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2b2f3a;
+  background: #0f131d;
+  color: #f5f5f5;
+}
+
+.overlay-card button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #38bdf8;
+  color: #04293a;
+}
+
+.best-preview {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #9aa3b7;
+}
+
+.best-preview strong {
+  color: #f5f5f5;
+  font-size: 20px;
+}
+
+@media (max-width: 720px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
