@@ -8,8 +8,8 @@
   </head>
   <body>
     <div class="app">
-      <header>
-        <h1>テトリス MVP</h1>
+      <header class="hero">
+        <h1 class="title">TETRIS</h1>
         <p class="hint">←/→ 移動、↓ ソフトドロップ、↑ 回転、Space ハードドロップ</p>
       </header>
       <section id="title-screen" class="overlay">
@@ -27,40 +27,49 @@
           </div>
         </div>
       </section>
-      <main>
-        <canvas id="board" width="300" height="600" aria-label="Tetris board"></canvas>
-        <aside class="panel">
-          <div class="stat">
-            <span>プレイヤー</span>
-            <strong id="player-label">-</strong>
-          </div>
-          <div class="stat">
-            <span>スコア</span>
-            <strong id="score">0</strong>
-          </div>
-          <div class="stat">
-            <span>ライン</span>
-            <strong id="lines">0</strong>
-          </div>
-          <div class="stat">
-            <span>レベル</span>
-            <strong id="level">1</strong>
-          </div>
-          <div class="stat">
-            <span>自己ベスト</span>
-            <strong id="best-score">0</strong>
-          </div>
-          <div class="stat stat-scores">
-            <span>トップ5</span>
-            <ol id="top-scores"></ol>
-          </div>
-          <div id="game-over" class="game-over" hidden>
-            <p>GAME OVER</p>
-            <p class="final-score">
-              最終スコア: <span id="final-score">0</span>
-            </p>
-            <button id="restart">リスタート</button>
-          </div>
+      <main class="layout">
+        <div class="board-wrap">
+          <canvas id="board" width="300" height="600" aria-label="Tetris board"></canvas>
+          <div id="game-over" class="game-over" hidden>GAME OVER</div>
+          <p class="start-hint">Press ENTER to start</p>
+        </div>
+        <aside class="panel-stack">
+          <section class="panel-card panel-score">
+            <h2 class="panel-title">SCORE</h2>
+            <div class="stat">
+              <strong id="score">0</strong>
+            </div>
+            <h2 class="panel-title">LINES</h2>
+            <div class="stat">
+              <strong id="lines">0</strong>
+            </div>
+            <h2 class="panel-title">LEVEL</h2>
+            <div class="stat">
+              <strong id="level">1</strong>
+            </div>
+            <div class="meta-hidden">
+              <span>プレイヤー</span>
+              <strong id="player-label">-</strong>
+              <span>自己ベスト</span>
+              <strong id="best-score">0</strong>
+            </div>
+          </section>
+          <section class="panel-card panel-next">
+            <h2 class="panel-title">NEXT</h2>
+            <div class="next-frame">
+              <canvas id="next" width="120" height="120" aria-label="Next piece preview"></canvas>
+            </div>
+          </section>
+          <section class="panel-card panel-ranking">
+            <h2 class="panel-title">RANKING</h2>
+            <div class="ranking-header">
+              <span>RANK</span>
+              <span>USER</span>
+              <span>SCORE</span>
+            </div>
+            <ol id="top-scores" class="ranking-list"></ol>
+            <button id="restart" class="restart-button">リスタート</button>
+          </section>
         </aside>
       </main>
     </div>
